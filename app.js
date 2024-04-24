@@ -3,8 +3,8 @@ const cors = require('cors')
 require('dotenv').config();
 const connectDB = require('./db/db');
 const questionRoutes = require('./routes/questionRoutes');
-const question = require("./model/questionSchema")
-const dummyData = require('./dummy')
+// const question = require("./model/questionSchema")
+// const dummyData = require('./dummy')
 
 
 const app = express();
@@ -23,19 +23,19 @@ app.get('/', (req, res) => {
 });
 
 // Function to add dummy data to the database
-async function addDummyData() {
-    try {
-      // Delete existing data to avoid duplication
-      await question.deleteMany();
+// async function addDummyData() {
+//     try {
+//       // Delete existing data to avoid duplication
+//       await question.deleteMany();
   
-      // Add the dummy data to the database
-      await question.insertMany(dummyData);
+//       // Add the dummy data to the database
+//       await question.insertMany(dummyData);
   
-      console.log('Dummy data added successfully');
-    } catch (err) {
-      console.error('Error adding dummy data:', err);
-    }
-  }
+//       console.log('Dummy data added successfully');
+//     } catch (err) {
+//       console.error('Error adding dummy data:', err);
+//     }
+//   }
   
 //   addDummyData();
   
